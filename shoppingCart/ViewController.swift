@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lemonNumLabel: UILabel!
     @IBOutlet weak var strawberryNumLabel: UILabel!
     @IBOutlet weak var chocolateNumLabel: UILabel!
+    @IBOutlet var countStepper: [UIStepper]!
     
     let prices = [175, 180, 150, 60, 1200]
     
@@ -26,7 +27,17 @@ class ViewController: UIViewController {
         clearLabel()
     }
     
-    @IBOutlet var countStepper: [UIStepper]!
+    func clearLabel()  {
+        chocolateNumLabel.text = "0個"
+        strawberryNumLabel.text = "0個"
+        lemonNumLabel.text = "0個"
+        madeleineNumLabel.text = "0個"
+        roseNumLabel.text = "0個"
+        totalPriceLabel.text = "總金額：0元"
+        for stepper in countStepper {
+            stepper.value = 0
+        }
+    }
     
     func calculator()  {
         var sum = 0
@@ -64,18 +75,6 @@ class ViewController: UIViewController {
         let num = Int(sender.value)
         roseNumLabel.text = "\(num)個"
         calculator()
-    }
-    
-    func clearLabel()  {
-        chocolateNumLabel.text = "0個"
-        strawberryNumLabel.text = "0個"
-        lemonNumLabel.text = "0個"
-        madeleineNumLabel.text = "0個"
-        roseNumLabel.text = "0個"
-        totalPriceLabel.text = "總金額：0元"
-        for stepper in countStepper {
-            stepper.value = 0
-        }
     }
     
     @IBAction func clearButtonClicked(_ sender: Any) {
