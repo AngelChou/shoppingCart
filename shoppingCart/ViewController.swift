@@ -11,12 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var totalPriceLabel: UILabel!
-    @IBOutlet weak var roseNumLabel: UILabel!
-    @IBOutlet weak var madeleineNumLabel: UILabel!
-    @IBOutlet weak var lemonNumLabel: UILabel!
-    @IBOutlet weak var strawberryNumLabel: UILabel!
-    @IBOutlet weak var chocolateNumLabel: UILabel!
     @IBOutlet var countStepper: [UIStepper]!
+    @IBOutlet var numberLabel: [UILabel]!
     
     let prices = [175, 180, 150, 60, 1200]
     
@@ -28,11 +24,9 @@ class ViewController: UIViewController {
     }
     
     func clearLabel()  {
-        chocolateNumLabel.text = "0個"
-        strawberryNumLabel.text = "0個"
-        lemonNumLabel.text = "0個"
-        madeleineNumLabel.text = "0個"
-        roseNumLabel.text = "0個"
+        for label in numberLabel {
+            label.text = "0個"
+        }
         totalPriceLabel.text = "總金額：0元"
         for stepper in countStepper {
             stepper.value = 0
@@ -47,35 +41,12 @@ class ViewController: UIViewController {
         totalPriceLabel.text = "總金額：\(sum)元"
     }
     
-    @IBAction func chocolateStepper(_ sender: UIStepper) {
+    @IBAction func stepperChanged(_ sender: UIStepper) {
         let num = Int(sender.value)
-        chocolateNumLabel.text = "\(num)個"
+        numberLabel[sender.tag].text = "\(num)個"
         calculator()
     }
     
-    @IBAction func strawberryStepper(_ sender: UIStepper) {
-        let num = Int(sender.value)
-        strawberryNumLabel.text = "\(num)個"
-        calculator()
-    }
-    
-    @IBAction func lemonStepper(_ sender: UIStepper) {
-        let num = Int(sender.value)
-        lemonNumLabel.text = "\(num)個"
-        calculator()
-    }
-    
-    @IBAction func madeleineStepper(_ sender: UIStepper) {
-        let num = Int(sender.value)
-        madeleineNumLabel.text = "\(num)個"
-        calculator()
-    }
-    
-    @IBAction func roseStepper(_ sender: UIStepper) {
-        let num = Int(sender.value)
-        roseNumLabel.text = "\(num)個"
-        calculator()
-    }
     
     @IBAction func clearButtonClicked(_ sender: Any) {
         clearLabel()

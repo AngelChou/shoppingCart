@@ -13,7 +13,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="shoppingCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -87,7 +86,7 @@
                                 <color key="backgroundColor" red="0.86068600169999998" green="0.60520119859999999" blue="0.7872163955" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="chocolateStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="Kyf-x1-C0N"/>
+                                    <action selector="stepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="nqY-zq-GNu"/>
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="pvJ-U3-hbC" userLabel="Stepper2">
@@ -96,7 +95,7 @@
                                 <color key="backgroundColor" red="0.86068600169999998" green="0.60520119859999999" blue="0.7872163955" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="strawberryStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="u1z-qc-8hX"/>
+                                    <action selector="stepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="gfO-6V-oKh"/>
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="mrM-oe-qr0" userLabel="Stepper3">
@@ -105,7 +104,7 @@
                                 <color key="backgroundColor" red="0.86068600169999998" green="0.60520119859999999" blue="0.7872163955" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="lemonStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="n78-ge-97v"/>
+                                    <action selector="stepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="9cJ-rl-lfW"/>
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="KTR-s6-s3X" userLabel="Stepper4">
@@ -114,7 +113,7 @@
                                 <color key="backgroundColor" red="0.86068600169999998" green="0.60520119859999999" blue="0.7872163955" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="madeleineStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="jnC-HZ-QY2"/>
+                                    <action selector="stepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="xbd-IN-rg4"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="個" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNW-Yl-ysl">
@@ -130,7 +129,7 @@
                                 <color key="backgroundColor" red="0.86068600169999998" green="0.60520119859999999" blue="0.7872163955" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <action selector="roseStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="aaV-y8-HAH"/>
+                                    <action selector="stepperChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="WZ6-L3-0nh"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="個" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0B-Hu-ijX">
@@ -191,19 +190,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="chocolateNumLabel" destination="uNW-Yl-ysl" id="OT0-gz-wkG"/>
-                        <outlet property="lemonNumLabel" destination="Ky1-mC-rJ9" id="R3w-5v-JhE"/>
-                        <outlet property="madeleineNumLabel" destination="A6d-Ol-hmD" id="1a1-a9-vX8"/>
-                        <outlet property="roseNumLabel" destination="4EV-Vr-tbI" id="1LQ-Dx-zK5"/>
-                        <outlet property="strawberryNumLabel" destination="a0B-Hu-ijX" id="46v-Om-g2Z"/>
                         <outlet property="totalPriceLabel" destination="bhc-UI-G9P" id="UqP-4i-wus"/>
                         <outletCollection property="countStepper" destination="uze-kO-e9l" collectionClass="NSMutableArray" id="vyr-gm-i4b"/>
                         <outletCollection property="countStepper" destination="pvJ-U3-hbC" collectionClass="NSMutableArray" id="ZwT-E6-kI7"/>
                         <outletCollection property="countStepper" destination="mrM-oe-qr0" collectionClass="NSMutableArray" id="HRO-Zm-Dot"/>
                         <outletCollection property="countStepper" destination="KTR-s6-s3X" collectionClass="NSMutableArray" id="qwx-Ud-ofd"/>
                         <outletCollection property="countStepper" destination="xW2-th-I0N" collectionClass="NSMutableArray" id="QfO-6Z-4si"/>
+                        <outletCollection property="numberLabel" destination="uNW-Yl-ysl" collectionClass="NSMutableArray" id="6VE-XL-BgA"/>
+                        <outletCollection property="numberLabel" destination="a0B-Hu-ijX" collectionClass="NSMutableArray" id="bag-ah-mds"/>
+                        <outletCollection property="numberLabel" destination="Ky1-mC-rJ9" collectionClass="NSMutableArray" id="BwG-Xk-9tG"/>
+                        <outletCollection property="numberLabel" destination="A6d-Ol-hmD" collectionClass="NSMutableArray" id="TnC-eQ-MXf"/>
+                        <outletCollection property="numberLabel" destination="4EV-Vr-tbI" collectionClass="NSMutableArray" id="xAG-Ip-IHG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="57.971014492753625" y="20.758928571428569"/>
         </scene>
